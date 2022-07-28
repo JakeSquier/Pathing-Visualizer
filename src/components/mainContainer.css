@@ -1,0 +1,110 @@
+.main-container{
+    height: 99vh;
+
+}
+
+.visualizer-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    position: relative;
+    top: -5.5%;
+}
+
+.grid-info-container{
+    padding-left: 2.3vw;
+    padding-right: 1.8vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 1vw;
+    align-items: center;
+}
+
+.grid-text{
+    color: rgb(168, 178, 209);
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    font-size: 13px;
+    line-height: 16.9px;
+}
+
+.grid-alg-text{
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    font-size: 13px;
+}
+
+.progress-bar-container{
+    background: rgba( 255, 255, 255, 0.15 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 3px 3px 3px 3px;
+    height: 8px;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+.progress{
+    width: 0%;
+    height: 95%;
+    border-radius: 3px 3px 3px 3px;
+    z-index: 2;
+}
+
+.progress-no-stop{
+    background-color: rgba(0, 190, 218, 0.75);
+}
+
+.progress-no-stop-anime{
+    background-color: rgba(0, 190, 218, 0.75);
+    animation: progressAnim;
+}
+
+@keyframes progressAnim {
+    0% {
+      background-color: rgba(0, 0, 66, 0.75);
+    }
+  
+    25% {
+      background-color: rgba(17, 104, 217, 0.75);
+    }
+  
+    70% {
+      background-color: rgba(0, 217, 159, 0.75);
+    }
+  
+    100% {
+      background-color: rgba(0, 190, 218, 0.75);
+      box-shadow: 0 0 40px rgba(0, 190, 218, 0.75);
+    }
+}
+
+.progress-stop{
+    background-color: #e39ff6;
+}
+
+.progress-stop-anime{
+    background-color: rgba(0, 190, 218, 0.75);
+    animation: progressAnimStop;
+}
+
+@keyframes progressAnimStop {
+    0% {
+        background-color: #a1045a;
+    }
+
+    25% {
+        background-color: purple;
+    }
+    
+    75% {
+        background-color: #af69ef;
+    }
+    
+    100% {
+        background-color: #e39ff6;
+    }
+}

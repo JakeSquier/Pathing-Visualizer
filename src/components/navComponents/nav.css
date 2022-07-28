@@ -1,0 +1,554 @@
+/* html { font-size: 62.5%; }  */
+
+.nav-bar{
+    position: absolute;
+    right: -.07%;
+    bottom: 0px;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    width: 100%;
+    height: 30vh;
+    z-index: 5;
+    transition: 350ms;
+    display: flex;
+}
+
+.nav-inactive{
+    bottom: -30.5%;
+    transition: 350ms;
+}
+
+.nav-active{
+    bottom: -10px;
+    transition: 350ms;
+}
+
+.nav-toggle-container{
+    z-index: 2;
+    position: absolute;
+    top: -14.6%;
+    left: 44%;
+    height: 14%;
+    width: 14%;
+    border-radius: 80% 80% 0 0;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba( 255, 255, 255, 0.15 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+.algs-container {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    height: 93%;
+    width: 40%;
+    border-radius: 15px;
+}
+
+.alg-selector{
+    position: absolute;
+    top: 0px;
+    height: 95%;
+    width: 30%;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+}
+
+.alg-tab{
+    font-size: 5px;
+}
+
+.alg-card-text-container{
+    position: absolute;
+    top: 26%;
+    left: 1%;
+    height: 55%;
+    width: 85%;
+    overflow: hidden;
+}
+
+.alg-tab-text{
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+}
+
+.alg-card{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 94%;
+    width: 65%;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-size: 430px;
+    display: inline-block;
+}
+
+.alg-card-glass{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.alg-card-title{
+    margin-left: 4%;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    font-size: 1.5vw;
+}
+
+.alg-card-desc{
+    margin-left: 4%;
+    margin-top: 3%;
+    color: snow;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    font-size: 1vw;
+}
+
+.play-btn-container{
+    margin-left: 1.5%;
+    margin-top: 20%;
+}
+
+.play-btn{
+    color: rgb(100, 255, 218);
+    width: 20px;
+}
+
+.middle-container{
+    position: absolute;
+    top: 15px;
+    left: 43%;
+    height: 90%;
+    width: 16%;
+}
+
+.speed-container{
+    margin-top: -3.5%;
+    height: 15%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    flex-flow: wrap row;
+    align-content: center;
+    justify-content: center;
+    column-gap: 5%;
+}
+
+.subtract-btn{
+    color: rgb(2,232,216);
+    width: 50px;
+}
+
+.add-btn{
+    color: rgb(2,232,216);
+    width: 50px;
+}  
+
+.speed-text{
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    font-size: 1.2vw;
+}
+
+.maze-btn{
+    position: absolute;
+    top: 1.5%;
+    background-color: rgba(12, 53, 71, 0.868) !important;
+}
+
+.maze-btn-text{
+    color: snow;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+
+.maze-selector{
+    position: absolute;
+    bottom: 6.5%;
+    height: 60%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    justify-content: center;
+}
+
+.items-container{
+    position: absolute;
+    bottom: 6.5%;
+    right: 0px;
+    height: 90%;
+    width: 40%;
+    display: inline-block;
+}
+
+.items-selector{
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.item-btn{
+    margin: 0px auto;
+    color: snow;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+}
+
+.first-btn{
+    border-radius: 10px 0 0 10px;
+}
+
+.last-btn{
+    border-radius: 0 10px 10px 0;
+}
+
+.item-btn-active{
+    border-radius: 10px;
+    background-color: white;
+}
+
+.item-btn-active-start{
+    background: rgb(2,232,216);
+    background: linear-gradient(90deg, rgba(2,232,216,1) 26%, rgba(29,253,38,1) 52%);
+    border-radius: 10px;
+}
+
+.item-btn-active-target{
+    background: rgb(146,2,232);
+    background: linear-gradient(90deg, rgba(146,2,232,1) 0%, rgba(253,29,133,1) 100%);  
+    border-radius: 10px;
+}
+
+.item-btn-active-wall{
+    background: rgb(73,2,232);
+    background: linear-gradient(90deg, rgba(73,2,232,1) 0%, rgba(29,253,215,1) 100%);
+    border-radius: 10px;
+}
+
+.item-btn-active-weight{
+    background: rgb(216,2,232);
+    background: linear-gradient(90deg, rgba(216,2,232,1) 0%, rgba(0,71,255,1) 100%);
+    border-radius: 10px;
+}
+
+.item-btn-active-stop{
+    background: rgb(255,76,2);
+    background: linear-gradient(90deg, rgba(255,76,2,1) 0%, rgba(255,199,0,1) 100%);
+    border-radius: 10px;
+}
+
+.item-btn-text{
+    margin: 11px auto;
+    font-weight: bold;
+    font-size: auto;
+}
+
+.item-card{
+    margin-top: 0%;
+    width: 98%;
+    height: 94%;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+    display: inline-block;
+}
+
+.start-item-back{
+    background-image: url('../../media/waveStart.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.target-item-back{
+    background-image: url('../../media/waveTarget.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wall-item-back{
+    background-image: url('../../media/waveWall.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stop-item-back{
+    background-image: url('../../media/waveStop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wavePath{
+    /* transform: translate(0, '50px'); */
+    opacity:0.9;
+}
+
+.item-title{ 
+    z-index: 2;
+    font-size: 1.6vw;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3), 2px 2px 2px rgba(41,255,75,0.26);
+    margin-left: .9vw;
+    margin-top: .7vw;
+}
+
+.description-box{
+    position: absolute;
+    top: 46%;
+    left: 2.5%;
+    width: 63%;
+    height: 90px;
+    z-index: 2;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.item-description{
+    display: inline-block;
+    font-size: minMax(1.035vw, 28px);
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: snow;
+    margin-top: .4vw;
+    padding-left: .7vw;
+    padding-right: .8vw;
+}
+
+.item-picture{
+    position: absolute;
+    top: 58%;
+    left: 79%;
+}
+
+.item-picture:hover{
+    animation-name: pictureHover;
+    animation-duration: .5s;
+    animation-delay: 0;
+}
+
+@keyframes pictureHover{
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
+}
+
+.start-picture{
+    animation-name: fadeInStart;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.target-picture{
+    animation-name: fadeInTarget;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.stop-picture{
+    animation-name: fadeInStop;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.wall-picture{
+    position: absolute;
+    top: 58%;
+    left: 79%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(12, 53, 71);
+    animation-name: fadeInWall;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.wall-picture:hover{
+    animation-name: pictureHover;
+    animation-duration: .75s;
+    animation-delay: 0;
+}
+
+@keyframes fadeInStart {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+      }
+    
+      75% {
+        transform: scale(1.2);
+      }
+    
+      100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInTarget {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+      }
+    
+      75% {
+        transform: scale(1.2);
+      }
+    
+      100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInWeight {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+      }
+    
+      75% {
+        transform: scale(1.2);
+      }
+    
+      100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInStop {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+      }
+    
+      75% {
+        transform: scale(1.2);
+      }
+    
+      100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInWall {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+      }
+    
+      75% {
+        transform: scale(1.2);
+      }
+    
+      100% {
+        transform: scale(1);
+    }
+}
+
+/* top nav styles below */
+
+.side-nav-container{
+    position: absolute;
+    left: .7%;
+    top: 7.1%;
+    width: 1.4%;
+    height: 89.4vh;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.reset-options-container{
+    position: relative;
+    top: -38.9vh;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap column;
+}
+
+.erase-container{
+    padding-right: 4px;
+    height: 80%;
+    width: 90%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.reset-container{
+    padding-left: 1px;
+    height: 80%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.erase-btn{
+    color: rgb(184, 237, 213) !important;
+    font-size: 100% !important;
+}
+
+.reset-btn{
+    color: rgb(184, 237, 213) !important;
+    font-size: 95% !important;
+}
+
+
+.nav-top-inactive{
+    top: -30%;
+    transition: 350ms;
+}
+
+.nav-top-active{
+    transition: 350ms;
+}
