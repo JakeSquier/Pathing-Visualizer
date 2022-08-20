@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import algData from '../../data/alg-data'
 import './nav.css'
+import './navmini.css'
 import Start from '../../media/right-arrow.png'
 import Finish from '../../media/dart-board.png'
 import Stop from '../../media/stop.png'
@@ -60,10 +61,9 @@ export default class Navbar extends Component {
         const mazeAlgs = ['Recursive Division Maze', 'Vertical Division Maze', 'Horizontal Divsion Maze', 'Random Maze']
         const currItem = this.props.state.currItemObj
         const currAlg = this.props.state.currAlgObj
-        
 
         return(
-            <div className={`nav-bar nav-${showNav ? 'active' : 'inactive'}`}>
+                <div className={`nav-bar nav-${showNav ? 'active' : 'inactive'}`}>
                 <div className='nav-toggle-container'>
                     <IconButton className="nav-btn" onClick={this.props.toggleNav}>
                         {this.props.state.showNav ? <ArrowCircleDownIcon /> : <ArrowCircleUpIcon />}
@@ -71,18 +71,15 @@ export default class Navbar extends Component {
                 </div>
                 <div className="algs-container">
                     <div className="alg-selector">
-                        <Tabs
-                            orientation="vertical"
-                            TabIndicatorProps={{style: {background:'rgb(100, 255, 218)'}}}
-                            value={this.props.state.currAlgTab}
-                            onChange={this.props.handleTabs}
-                            variant="scrollable"
-                            
-                        >
-                            {algData.map((alg, val) => {
-                                return <Tab className="alg-tab" label={<span className="alg-tab-text">{`${alg.name}`}</span>} value={val} />
-                            })}
-                        </Tabs>
+                        <div className="alg-select-wrapper">
+                        {
+                            algData.map((alg, val) => {
+                                return (
+                                    <button data-val={val} onClick={this.props.handleTabs}>{alg.name}</button>
+                                )
+                            })
+                        }
+                        </div>
                     </div>
                     <div className='alg-card'>
                         <div className='alg-card-glass'>
@@ -109,23 +106,18 @@ export default class Navbar extends Component {
                         </IconButton>
                     </div>
                     <Button className="maze-btn" onClick={this.props.genMaze} variant="contained" fullWidth={true} color="primary">
-                        <Typography className="maze-btn-text" >
+                        <Typography className="maze-btn-text">
                             Generate
                         </Typography>
                     </Button>
                     <div className="maze-selector">
-                        <Tabs
-                            orientation="vertical"
-                            TabIndicatorProps={{style: {background: 'rgb(100, 255, 218)'}}}
-                            value={this.props.state.currMazeTab}
-                            onChange={this.props.handleMazeTabs}
-                            variant="scrollable"
-                            
-                        >
-                            {mazeAlgs.map((title, val) => {
-                                return <Tab className="alg-tab" label={<span className="alg-tab-text">{`${title}`}</span>} value={val} />
-                            })}
-                        </Tabs>
+                        <div className='maze-select-wrapper'>
+                        {mazeAlgs.map((title, val) => {
+                            return (
+                                <button data-val={val} onClick={this.props.handleMazeTabs}>{title}</button>
+                            )
+                        })}
+                        </div>
                     </div>
                 </div>
                 <div className="items-container">

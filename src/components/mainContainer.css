@@ -1,6 +1,5 @@
 .main-container{
     height: 99vh;
-
 }
 
 .visualizer-container{
@@ -106,5 +105,22 @@
     
     100% {
         background-color: #e39ff6;
+    }
+}
+
+@media only screen and (max-width: 772px) {
+    .grid-info-container{
+        flex-direction: column;
+        width: 90vw;
+    }
+    .progress-bar-container{
+        width: 95%;
+        position: relative;
+        bottom: .5em;
+    }
+
+    .visualizer-container{
+        position: relative;
+        top: -4%;
     }
 }

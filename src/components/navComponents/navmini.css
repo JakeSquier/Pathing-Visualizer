@@ -1,0 +1,295 @@
+.nav-bar-mini{
+    position: absolute;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 0 10px 10px 0;
+    width: 320px;
+    height: 99vh;
+    z-index: 5;
+    transition: 350ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: .5vh 5px .5vh 5px;
+    row-gap: 5px;
+}
+
+.nav-mini-inactive{
+    top: 0;
+    left: -330px;
+    transition: 350ms;
+}
+
+.nav-mini-active{
+    top: 0;
+    left: -5px;
+}
+
+.nav-toggle-container-mini{
+    position: absolute;
+    left: 322px;
+    bottom:10px;
+    transform: rotate(90deg);
+    border-radius: 80% 80% 0 0;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+.nav-btn-mini{
+
+}
+
+.top-container-mini{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.alg-selector-mini{
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.alg-select-wrapper-mini{
+    width: 98%;
+    height: 60%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 1%;
+    border-left: solid 1px rgb(100, 255, 218);
+}
+
+.title-mini{
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    margin-left: 4%;
+}
+
+.next-btn{
+    color: rgb(100, 255, 218);
+    transform: scale(1.5);
+}
+
+.alg-card-mini{
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    flex: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.alg-text-mini{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    row-gap: .5em;
+    margin-left: 1em;
+    margin-left: 1em;
+}
+
+.alg-text-mini > h2{
+    margin: 1em 0 0 0;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    font-size: 2.2vh;
+}
+
+.alg-text-mini > p{
+    display: inline-block;
+    color: snow;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    font-size: 1.6vh;
+    width: 90%;
+}
+
+.play-mini{
+    color: rgb(100, 255, 218);
+    transform: scale(1.2);
+}
+
+.reset-mini{
+    color: rgb(100, 255, 218);
+    transform: scale(1.2);
+}
+
+.erase-mini{
+    color: rgb(100, 255, 218);
+    transform: scale(1.4);
+}
+
+.alg-play-mini{
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    align-items: center;
+}
+
+.middle-container-mini{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.generate-btn-mini{
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+}
+
+.card-container-mini{
+    flex: 7;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.maze-alg-selector-mini{
+    flex: 5;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 5px;
+}
+
+.maze-title-mini{
+    text-align: center;
+}
+
+.arrow-btn-down{
+    transform: scale(2);
+    color: rgb(100, 255, 218);
+}
+
+.arrow-btn-up{
+    transform: scale(2);
+    color: rgb(100, 255, 218);
+}
+
+.speed-controls-container-mini{
+    flex: 1;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.speed-text-mini{
+    font-size: 1.8vh;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+}
+
+.bottom-container-mini{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-card-mini{
+    flex: 1;
+    border-radius: 10px;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info-mini{
+    margin-left: 5%;
+}
+
+.item-info-mini > h2{
+    z-index: 2;
+    font-size: 4;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3), 2px 2px 2px rgba(41,255,75,0.26);
+}
+
+.item-text-mini{
+    width: 80%;
+    height: auto;
+    background-color: rgba(0, 31, 63, 0.673);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 5px 10px;
+}
+
+.item-text-mini > p{
+    display: inline-block;
+    font-size: 1.6vh;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: snow;
+}
+
+.pic-container{
+    position: relative;
+    left: 40%;
+    top: 5%;
+}
+
+.item-picture-mini:hover{
+    animation-name: pictureHover;
+    animation-duration: .5s;
+    animation-delay: 0;
+}
+
+.wall-picture-mini{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(12, 53, 71);
+    animation-name: fadeInWall;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.wall-picture-mini:hover{
+    animation-name: pictureHover;
+    animation-duration: .75s;
+    animation-delay: 0;
+}

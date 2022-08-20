@@ -6,7 +6,7 @@ import { verticalMaze } from '../mazeAlgorithims/verticalMaze';
 import { horizontalMaze } from '../mazeAlgorithims/HorizontalMaze';
 import { recursiveDivisionMaze } from '../mazeAlgorithims/recursiveDivisionMaze';
 import Navbar from './navComponents/Navbar';
-import NavTop from './navComponents/topNav';
+import NavTop from './navComponents/sideNav';
 import itemData from '../data/item-data'
 import algData from '../data/alg-data'
 import pathGrabWorker from '../workers/pathGrabWorker';
@@ -30,7 +30,7 @@ export default class MainContainer extends Component{
             currItemObj: itemData[0],
             currAlgObj: algData[0],
             currAlgTab: 0,
-            lcurrMazeAlg: 'Recursive Division Maze',
+            currMazeAlg: 'Recursive Division Maze',
             rowNum: 24,
             colNum: 49,
             currMazeTab: 0,
@@ -52,8 +52,41 @@ export default class MainContainer extends Component{
     // row is width
     // col is height
     componentDidMount() {
-      const grid = renderGrid(this.state, this.state.rowNum, this.state.colNum)
-      this.setState({grid: grid});
+
+      const handleResize = async () => {
+        var height = window.innerHeight
+        var width = window.innerWidth
+
+        if(width < 500) {
+          await this.setState({rowNum: 24, colNum: 12, startNode: [12,1], finishNode:[12, 10]})
+        } else if(width < 1000 && width > 500) {
+          await this.setState({rowNum: 30, colNum: 23, startNode: [15,1], finishNode:[15, 21]})
+        } else if(width < 1200 && width > 1000) {
+          await this.setState({rowNum: 24, colNum: 35, startNode: [15,1], finishNode:[15, 21]})
+        } else if(width > 1200) {
+          await this.setState({rowNum: 24, colNum: 49, startNode: [12,1], finishNode:[12, 47]})
+        }
+
+        const grid = renderGrid(this.state, this.state.rowNum, this.state.colNum)
+        this.setState({grid: grid});
+      }
+      
+      var resizeTimer;
+
+      window.addEventListener('resize', () => {
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function() {
+      
+          handleResize()
+                  
+        }, 250);
+      })
+
+      // const grid = renderGrid(this.state, this.state.rowNum, this.state.colNum)
+      // this.setState({grid: grid});
+      handleResize()
     }
 
     handleMouseDown = (row, col) => {
@@ -119,11 +152,44 @@ export default class MainContainer extends Component{
       })
     }
 
-    handleTabs = (e, val) => {
+    handleTabs = (e) => {
+      var val = e.target.dataset.val
       this.setState({currAlgTab: val, currAlgObj: algData[val]})
     }
 
-    handleMazeTabs = (e, val) => {
+    handleMiniTabs = (e) => {
+      var val = this.state.currAlgTab
+      if(val+1 > algData.length-1){
+        val = 0
+      } else {
+        val++
+      }
+
+      this.setState({currAlgTab: val, currAlgObj: algData[val]})
+    }
+
+    handleMazeTabs = (e) => {
+      var val = parseInt(e.target.dataset.val)
+      this.setState({currMazeTab: val})
+    }
+
+    handleMiniMazeTabs = (up) => {
+      var val = this.state.currMazeTab
+
+      if(up) {
+        if(val <= 0) {
+          this.setState({currMazeTab: 3})
+          return
+        }
+        val--
+      } else {
+        if(val >= 3) {
+          this.setState({currMazeTab: 0})
+          return
+        }
+        val++
+      }
+
       this.setState({currMazeTab: val})
     }
 
@@ -247,7 +313,8 @@ export default class MainContainer extends Component{
       var currAlg = this.state.currAlgObj.id
       this.setState({
         gridClean: false,
-        visualizingAlgorithm: true
+        visualizingAlgorithm: true,
+        showNav: false
       })
       if(currAlg===0){
         this.visualizeDijkstra()
@@ -1305,7 +1372,7 @@ export default class MainContainer extends Component{
                       <div className='progress progress-no-stop' id='progressBar'/>
                   </div>
                 </div>
-                <NavTop state={this.state} clearGrid={this.clearGrid} resetGrid={this.resetGrid}/>
+                <NavTop state={this.state} handleMiniMazeTabs={this.handleMiniMazeTabs} handleMiniTabs={this.handleMiniTabs} clearGrid={this.clearGrid} resetGrid={this.resetGrid} toggleNav={this.handleNav} handleSpeedChange={this.handleSpeedChange} handleMazeTabs={this.handleMazeTabs} genMaze={this.generateMaze} play={this.playAnimation} handleTabs={this.handleTabs} handleItemChange={this.handleItemDescChange}/>
                 <div className="visualizer-container">
                     <Visualizer 
                         state={this.state} 
@@ -1314,7 +1381,7 @@ export default class MainContainer extends Component{
                         handleMouseUp={this.handleMouseUp}
                     />
                 </div>
-                <Navbar state={this.state} toggleNav={this.handleNav} handleSpeedChange={this.handleSpeedChange} handleMazeTabs={this.handleMazeTabs} genMaze={this.generateMaze} play={this.playAnimation} handleTabs={this.handleTabs} handleItemChange={this.handleItemDescChange} visualizeDijkstra={this.visualizeDijkstra}/>
+                {window.innerWidth > 1000 && <Navbar state={this.state} toggleNav={this.handleNav} handleSpeedChange={this.handleSpeedChange} handleMazeTabs={this.handleMazeTabs} genMaze={this.generateMaze} play={this.playAnimation} handleTabs={this.handleTabs} handleItemChange={this.handleItemDescChange} visualizeDijkstra={this.visualizeDijkstra}/>}
             </div>
         )
     }

@@ -34,6 +34,7 @@
     left: 44%;
     height: 14%;
     width: 14%;
+    min-width: 150px;
     border-radius: 80% 80% 0 0;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     background: rgba( 255, 255, 255, 0.15 );
@@ -62,9 +63,51 @@
     background-color: rgba(0, 31, 63, 0.673);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
+    /* styles for custom btns */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alg-select-wrapper{
+    height: 90%;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1%;
+    border-left: solid 1px rgb(100, 255, 218);
+}
+
+.alg-select-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.alg-select-wrapper > button {
+    flex: auto;
+    border-radius: 2px;
+    border: 0;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    text-align: left;
+    padding: 20px 10px 20px 10px;
+    transition: .5s;
+}
+
+.alg-select-wrapper > button:hover{
+    background-color: rgba(100, 255, 219, 0.126);
+}
+
+.alg-select-wrapper > button:focus{
+    background-color: rgba(100, 255, 219, 0.126);
+    border-right: solid 3px rgb(100, 255, 218);
 }
 
 .alg-tab{
+    width: 100%;
     font-size: 5px;
 }
 
@@ -187,6 +230,44 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.maze-select-wrapper{
+    height: 80%;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1%;
+    border-left: solid 1px rgb(100, 255, 218);
+}
+
+.maze-select-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.maze-select-wrapper > button {
+    flex: auto;
+    border-radius: 2px;
+    border: 0;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    color: rgb(100, 255, 218);
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    transition: .5s;
+}
+
+.maze-select-wrapper > button:hover{
+    background-color: rgba(100, 255, 219, 0.126);
+}
+
+.maze-select-wrapper > button:focus{
+    background-color: rgba(100, 255, 219, 0.126);
+    border-right: solid 3px rgb(100, 255, 218);
 }
 
 .items-container{
@@ -330,11 +411,12 @@
     border-radius: 10px;
     overflow: hidden;
     display: flex;
+    align-items: center;
 }
 
 .item-description{
     display: inline-block;
-    font-size: minMax(1.035vw, 28px);
+    font-size: 14px;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     color: snow;
     margin-top: .4vw;
@@ -505,7 +587,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .reset-options-container{
@@ -551,4 +632,13 @@
 
 .nav-top-active{
     transition: 350ms;
+}
+
+@media only screen and (max-width: 772px) {
+    .side-nav-container{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        align-self: center;
+    }
 }

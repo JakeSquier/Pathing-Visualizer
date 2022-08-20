@@ -53,7 +53,9 @@ export default () => {
             } else if(isStop){
                 //going to repeat normal function yet twice for stop
                 const visitedNodesInOrder = [[],[]]
-                //grabbing all nodes        
+                //grabbing all nodes   
+                var unvisitedNodes = getAllNodes(grid)
+                     
                 var unvisitedNodesSecond = getAllNodes(grid)
             
                 unvisitedNodes.forEach((node) => {

@@ -13,6 +13,7 @@ export default () => {
             } else {
               isStop = true
             }
+            console.log(stopNode)
             if(!isStop){
             const visitedNodesInOrder = []
             //grabbing all nodes
@@ -51,9 +52,10 @@ export default () => {
             //going to repeat normal function yet twice for stop
             const visitedNodesInOrder = [[],[]]
             //grabbing all nodes
+            var unvisitedNodes = getAllNodes(grid)
         
             var unvisitedNodesSecond = getAllNodes(grid)
-        
+              
             unvisitedNodes.forEach((node) => {
                 if(node === startNode){
                 node.distance = 0
