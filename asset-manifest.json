@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Pathing-Visualizer/static/css/main.9a639769.chunk.css",
+    "main.js": "/Pathing-Visualizer/static/js/main.beb0235b.chunk.js",
+    "main.js.map": "/Pathing-Visualizer/static/js/main.beb0235b.chunk.js.map",
+    "runtime-main.js": "/Pathing-Visualizer/static/js/runtime-main.298288f8.js",
+    "runtime-main.js.map": "/Pathing-Visualizer/static/js/runtime-main.298288f8.js.map",
+    "static/js/2.1073a850.chunk.js": "/Pathing-Visualizer/static/js/2.1073a850.chunk.js",
+    "static/js/2.1073a850.chunk.js.map": "/Pathing-Visualizer/static/js/2.1073a850.chunk.js.map",
+    "static/js/3.73f4bed2.chunk.js": "/Pathing-Visualizer/static/js/3.73f4bed2.chunk.js",
+    "static/js/3.73f4bed2.chunk.js.map": "/Pathing-Visualizer/static/js/3.73f4bed2.chunk.js.map",
+    "index.html": "/Pathing-Visualizer/index.html",
+    "static/css/main.9a639769.chunk.css.map": "/Pathing-Visualizer/static/css/main.9a639769.chunk.css.map",
+    "static/js/2.1073a850.chunk.js.LICENSE.txt": "/Pathing-Visualizer/static/js/2.1073a850.chunk.js.LICENSE.txt",
+    "static/media/Node.css": "/Pathing-Visualizer/static/media/stop.1934617d.png",
+    "static/media/nav.css": "/Pathing-Visualizer/static/media/waveWall.4cc58c9f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.298288f8.js",
+    "static/js/2.1073a850.chunk.js",
+    "static/css/main.9a639769.chunk.css",
+    "static/js/main.beb0235b.chunk.js"
+  ]
+}
